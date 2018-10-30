@@ -9,14 +9,22 @@ namespace Bonus_3
 {
     class BruteForce : Guesser
     {
-        protected int guessCount = 100;
+        protected int guessCount;
+        protected int bruceforce = 100;
 
         public override int Guess()
         {
+            BruceForce();
             guessCount++;
             return guessCount;
         }
 
+        public int BruceForce()
+        {
+            
+            bruceforce--;
+            return bruceforce;
+        }
         
 
     }

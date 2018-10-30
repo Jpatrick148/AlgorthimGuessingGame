@@ -22,8 +22,8 @@ namespace Bonus_3
             {
 
                 
-                //int guess = brute.Guess();
-                //foundNum = ga.GuessAnswer(guess);
+                int guess = brute.BruceForce();
+                foundNum = ga.GuessAnswer(guess);
 
                 //rando.Guess();
                 //int guess = rando.GuessRand();
@@ -32,7 +32,7 @@ namespace Bonus_3
 
             //rando.PrintGuesses();
 
-            //brute.PrintGuesses();
+            brute.PrintGuesses();
 
 
             Console.ReadLine();
