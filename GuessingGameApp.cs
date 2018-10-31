@@ -32,11 +32,11 @@ namespace Bonus_3
             {
                 return 0;
             }
-            else if (input < num)
+            else if (input > num)
             {
                 return 1;
             }
-            else if (input > num)
+            else if (input < num)
             {
                 return -1;
             }

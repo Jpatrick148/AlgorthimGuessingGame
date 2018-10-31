@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -40,12 +41,15 @@ namespace Bonus_3
             Console.WriteLine("Press enter to run High Low.");
 
             shoot.BinarySearch(direction);
-            while (direction != 0)
+
+            do
             {
                 shoot.Guess();
                 int guess = shoot.BinarySearch(direction);
+                Console.WriteLine(guess);
+                Console.ReadLine();
                 direction = ga.GuessAnswerInt(guess);
-            }
+            } while (direction != 0);
 
             shoot.PrintGuesses();
             

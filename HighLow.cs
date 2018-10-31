@@ -23,11 +23,12 @@ namespace Bonus_3
                 return lastGuess;
             }
 
-
-            else if (direction == 1)
+            
+             if (direction == 1)
             {
                 max = lastGuess - 1;
                 lastGuess = x.Next(min, max + 1);
+                return lastGuess;
             }
             else if (direction == -1)
             {
@@ -36,7 +37,7 @@ namespace Bonus_3
                 return lastGuess;
             }
 
-            return -1;
+            return -2;
         }
 
     }
