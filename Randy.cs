@@ -4,7 +4,7 @@ namespace Bonus_3
 {
     class Randy : Guesser
     {
-        
+        public Random x = new Random();
 
         public override int Guess()
         {
@@ -12,13 +12,11 @@ namespace Bonus_3
             //GuessRand();
             return guessCount;
         }
-        public Random x = new Random();
-        private int rndNum;
-
+        
          public int GuessRand()
          {
             
-            rndNum = x.Next(1, 101);
+            int rndNum = x.Next(1, 101);
             return rndNum;
        }         
 

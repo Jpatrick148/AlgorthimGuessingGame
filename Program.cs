@@ -10,31 +10,45 @@ namespace Bonus_3
     {
         static void Main(string[] args)
         {
-           
-            bool foundNum = false;
+            
+            bool foundNumB = false;
+            bool foundNumR = false;
+            int direction = 2;
             
             GuessingGameApp ga = new GuessingGameApp();
             BruteForce brute = new BruteForce();
-            Randy rando = new Randy();
+            HighLow shoot = new HighLow();
 
             Console.WriteLine();
-            while (foundNum == false)
+            while (foundNumB == false)
             {
-
-                
+                brute.Guess();
                 int guess = brute.BruceForce();
-                foundNum = ga.GuessAnswer(guess);
+                foundNumB = ga.GuessAnswer(guess);
+            }
+            brute.PrintGuesses();
+            Console.WriteLine("Press enter to run random");
+            Console.ReadLine();
+            Randy rando = new Randy();
+            while (foundNumR == false)
+            {
+                rando.Guess();
+                int guess = rando.GuessRand();
+                foundNumR = ga.GuessAnswer(guess);
+            }
+            rando.PrintGuesses();
+            Console.WriteLine("Press enter to run High Low.");
 
-                //rando.Guess();
-                //int guess = rando.GuessRand();
-                //foundNum = ga.GuessAnswer(guess);
+            shoot.BinarySearch(direction);
+            while (direction != 0)
+            {
+                shoot.Guess();
+                int guess = shoot.BinarySearch(direction);
+                direction = ga.GuessAnswerInt(guess);
             }
 
-            //rando.PrintGuesses();
-
-            brute.PrintGuesses();
-
-
+            shoot.PrintGuesses();
+            
             Console.ReadLine();
                 
         }

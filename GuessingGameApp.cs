@@ -26,13 +26,31 @@ namespace Bonus_3
             this.num = num;
         }
 
+        public int GuessAnswerInt(int input)
+        {
+            if (input == num)
+            {
+                return 0;
+            }
+            else if (input < num)
+            {
+                return 1;
+            }
+            else if (input > num)
+            {
+                return -1;
+            }
+
+            return -2;
+        }
+
         public bool GuessAnswer(int input)
         {
             
             int diff = 0;
             if (input == num)
             {
-                Console.WriteLine("Match! You win!");
+                //Console.WriteLine("Match! You win!");
                 return true;
             }
             else if (input > num)
@@ -40,11 +58,11 @@ namespace Bonus_3
                 diff = input - num;
                 if (diff > 10)
                 {
-                    Console.WriteLine("Way too high");
+                    //Console.WriteLine("Way too high");
                 }
                 else
                 {
-                    Console.WriteLine("Too high!");
+                   // Console.WriteLine("Too high!");
                 }
             }
             else
@@ -52,11 +70,11 @@ namespace Bonus_3
                 diff = num - input;
                 if (diff > 10)
                 {
-                    Console.WriteLine("Way too low!");
+                    //Console.WriteLine("Way too low!");
                 }
                 else
                 {
-                    Console.WriteLine("Too low");
+                    //Console.WriteLine("Too low");
                 }
             }
 

@@ -4,8 +4,10 @@ namespace Bonus_3
 {
     class HighLow : Guesser
     {
-        public int min = 0;
-        public int max = 100;
+        protected int min = 1;
+        protected int max = 100;
+        int lastGuess;
+        Random x = new Random();
 
         public override int Guess()
         {
@@ -13,29 +15,29 @@ namespace Bonus_3
             return guessCount;
         }
 
-        //public int BinarySearchRecursive(int key)
-        //{
-        //    int min, max;
-            
+        public int BinarySearch(int direction)
+        {
+            if (direction == 2)
+            {
+                lastGuess = x.Next(min, max + 1);
+                return lastGuess;
+            }
 
-        //    if (min > max)
-        //    {
 
-        //        Console.WriteLine("min was greater than max.");
-        //        return -1;
-        //    }
-        //    else
-        //    {
-        //        int mid = (min + max) / 2;
-        //        if (key == mid)
-        //            return ++mid;
-        //        else if (key < mid)
-        //            return BinarySearchRecursive(key);
-        //        else
-        //            return BinarySearchRecursive( key);
+            else if (direction == 1)
+            {
+                max = lastGuess - 1;
+                lastGuess = x.Next(min, max + 1);
+            }
+            else if (direction == -1)
+            {
+                min = lastGuess + 1;
+                lastGuess = x.Next(min, max + 1);
+                return lastGuess;
+            }
 
-        //    }
-        //}
+            return -1;
+        }
 
     }
 }
