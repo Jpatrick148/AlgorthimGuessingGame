@@ -11,6 +11,8 @@ namespace Bonus_3
     {
         
         protected int bruceforce = 100;
+        
+
 
         public override int Guess()
         {

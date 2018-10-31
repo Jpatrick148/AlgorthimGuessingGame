@@ -10,7 +10,7 @@ namespace Bonus_3
     {
         protected int guessCount = 0;
         public int GuessCount { get { return guessCount; } }
-        protected string name = "Billy";
+        protected string name;
 
         public abstract int Guess();
 
